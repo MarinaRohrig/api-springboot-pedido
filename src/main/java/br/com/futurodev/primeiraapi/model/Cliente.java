@@ -7,13 +7,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 
 @Getter
 @Setter// getters e setters do lombok
 @Entity
 @Table(name = "cliente")
-public class Cliente {
+public class Cliente implements Serializable {
 
    @EqualsAndHashCode.Include // equals and hascode, se usar @data em cima da classe puxa equals full
     @Id
