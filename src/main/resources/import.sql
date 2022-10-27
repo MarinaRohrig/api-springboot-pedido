@@ -16,6 +16,8 @@ INSERT INTO public.produto(descricao, preco_compra, preco_venda) VALUES ('Arroz'
 
 INSERT INTO public.role(nome_role) VALUES ('ROLE_ADMIN');
 INSERT INTO public.role(nome_role) VALUES ('ROLE_CAIXA');
+--INSERT INTO public.role(nome_role) VALUES ('ROLE_CADASTRADOR');
+--INSERT INTO public.role(nome_role) VALUES ('ROLE_PEDIDO');
 
 INSERT INTO public.usuario(login, nome, senha) VALUES ('brunomoura', 'Bruno Moura', '$2a$10$8okjbHGqFzdFAX.XtVBO6eEZWi4F7W285Yy6ZsQC9ZyecUB.gO91C');
 INSERT INTO public.usuarios_role(usuario_id, role_id) VALUES (1, 1);
