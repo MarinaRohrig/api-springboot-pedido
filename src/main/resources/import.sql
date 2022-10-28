@@ -32,6 +32,10 @@ INSERT INTO public.usuarios_role(usuario_id, role_id) VALUES (3, 1);
 INSERT INTO public.cliente(cpf, nome, rg) VALUES ('88888888888', 'Marina Larissa', '23213123');
 INSERT INTO public.cliente(cpf, nome, rg) VALUES ('99999999999', 'Maria Lari', '234234234');
 
+INSERT INTO public.forma_pagamento(descricao)VALUES ('cartão');
+INSERT INTO public.forma_pagamento(descricao)VALUES ('dinheiro');
+
+
 
 
 

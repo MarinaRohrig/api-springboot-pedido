@@ -1,5 +1,6 @@
 package br.com.futurodev.primeiraapi.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,6 +10,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.OffsetDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -31,5 +33,15 @@ public class Pedido implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_cliente", foreignKey = @ForeignKey(name = "fk_cliente"))
     private Cliente cliente;
+
+    @OneToOne
+    @JoinColumn(name = "id_formaPagamento",foreignKey = @ForeignKey(name ="fk_forma_pagamento"))
+    private FormaPagamento formaPagamento;
+
+    @OneToMany(mappedBy = "pedido")
+    @JsonManagedReference
+    private List<ItemPedido> itensPedido;
+
+
 
 }
