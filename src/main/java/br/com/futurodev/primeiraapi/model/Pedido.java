@@ -1,5 +1,6 @@
 package br.com.futurodev.primeiraapi.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -32,14 +33,15 @@ public class Pedido implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_cliente", foreignKey = @ForeignKey(name = "fk_cliente"))
+   // @JsonBackReference
     private Cliente cliente;
 
     @OneToOne
     @JoinColumn(name = "id_formaPagamento",foreignKey = @ForeignKey(name ="fk_forma_pagamento"))
     private FormaPagamento formaPagamento;
 
-    @OneToMany(mappedBy = "pedido")
-    @JsonManagedReference
+    @OneToMany(mappedBy = "pedido",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+   // @JsonManagedReference
     private List<ItemPedido> itensPedido;
 
 

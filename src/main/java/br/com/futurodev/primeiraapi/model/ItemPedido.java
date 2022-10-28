@@ -27,7 +27,7 @@ public class ItemPedido implements Serializable {
     private Produto produto;
 
     @ManyToOne
-    @JoinColumn(name ="id_pedido",foreignKey = @ForeignKey (name = "fk_pedido"))
-    @JsonBackReference
+    @JoinColumn(name ="id_pedido",referencedColumnName = "id",foreignKey = @ForeignKey (name = "fk_pedido"),nullable = false)
+   // @JsonBackReference
     private Pedido pedido;
 }

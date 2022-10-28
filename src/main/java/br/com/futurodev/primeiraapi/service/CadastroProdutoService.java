@@ -17,7 +17,6 @@ public class CadastroProdutoService {
 
     @Transactional
     public Produto salvar(Produto produto) {
-        // as ficariam aqui
         return produtoRepository.save(produto);
     }
 

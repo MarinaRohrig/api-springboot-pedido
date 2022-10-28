@@ -1,6 +1,7 @@
 package br.com.futurodev.primeiraapi.model;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -30,8 +31,9 @@ public class Cliente implements Serializable {
 
     private String rg;
 
-    @OneToMany(mappedBy = "cliente")
-    private List<Pedido> pedidoList;
+    //@OneToMany(mappedBy = "cliente", fetch = FetchType.EAGER)
+    //@JsonManagedReference
+    //private List<Pedido> pedidoList;
 
 
 
