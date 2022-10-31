@@ -32,6 +32,18 @@ INSERT INTO public.usuarios_role(usuario_id, role_id) VALUES (3, 1);
 INSERT INTO public.cliente(cpf, nome, rg) VALUES ('88888888888', 'Marina Larissa', '23213123');
 INSERT INTO public.cliente(cpf, nome, rg) VALUES ('99999999999', 'Maria Lari', '234234234');
 
+INSERT INTO public.forma_pagamento(descricao)VALUES ('cartão');
+INSERT INTO public.forma_pagamento(descricao)VALUES ('dinheiro');
+
+INSERT INTO public.produto(descricao, preco_compra, preco_venda) VALUES ('blah', '12.50', '19.70');
+INSERT INTO public.pedido (id_cliente, id_forma_pagamento) VALUES (1,1);
+INSERT INTO public.pedido (id_cliente, id_forma_pagamento) VALUES (1,2);
+INSERT INTO public.item_pedido(quantidade, valor_item, id_pedido, id_produto)VALUES ( '10', '20', 1, 2);
+INSERT INTO public.item_pedido(quantidade, valor_item, id_pedido, id_produto)VALUES ( '10', '20', 1, 1);
+
+
+
+
 
 
 
